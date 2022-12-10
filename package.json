@@ -8,8 +8,22 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "storybook": "start-storybook -p 9001",
     "build-storybook": "ng run common-ui:build-storybook",
-    "serve-storybook": "concurrently \"nx build-storybook | npx http-server ./dist/storybook/common-ui\" \" start http://127.0.0.1:8080\""
+    "serve-storybook": "concurrently \"nx build-storybook | npx http-server ./dist/storybook/common-ui\" \" start http://127.0.0.1:8080\"",
+    "chromatic": "npx chromatic --project-token=11ad5aaf8abb",
+    "graph": "npx nx graph",
+    "test-common": "npx nx test common-ui",
+    "lint-common": "npx nx lint common-ui",
+    "test-afected": "npx nx affected --target=test",
+    "build-admin": "npx nx build admin",
+    "build-store": "npx nx build tienda",
+    "clean-dist": "rm -rf dist",
+    "serve-story-book": "nx storybook tienda",
+    "build-story-book": "nx build-storybook tienda",
+    "generate-story-common-ui": "nx g @nrwl/angular:stories common-ui",
+    "test-tienda": "nx run tienda-e2e:e2e",
+    "serve-storybook": "nx run common-ui:storybook"
   },
   "private": true,
   "dependencies": {
@@ -62,9 +76,12 @@
     "jest-preset-angular": "~12.2.3",
     "nx": "15.3.0",
     "prettier": "^2.6.2",
+    "storybook-addon-designs": "^6.3.1",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2",
     "webpack": "^5.64.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "nx-tienda@0.0.0"
 }
